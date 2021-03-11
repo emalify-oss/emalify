@@ -38,7 +38,9 @@ class NativeConfig implements ConfigurationStore
     public function __construct($config = [])
     {
         if (!is_array($config)) {
-            $userConfig = isset($configPath) && file_exists($configPath) ? $configPath : realpath(__DIR__ . '/../../../../../../config/roamtechapi.php');
+            $configPath = $config;
+            $userConfig = isset($configPath) && file_exists($configPath) ? 
+            $configPath : realpath(__DIR__ . '/../../../../../../config/roamtechapi.php');
             $config = [];
             if (\is_file($userConfig)) {
                 $config = require_once $userConfig;

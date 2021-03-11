@@ -31,6 +31,6 @@ return [
     |
     */
 
-    'cache_location' => realpath(__DIR__.'/../cache'),
+    'cache_location' => __DIR__.'/../cache',
 
 ];
